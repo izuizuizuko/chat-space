@@ -1,0 +1,31 @@
+%l
+ %body
+  .sidebar
+   .sidebar__username
+    .sidebar__username_box
+     .sidebar__userename_box_name 
+      izumi
+     .sidebar__username_box_menu
+      .sidebar__username_box_menu_edit-user
+       = link_to "#", class: "sidebar__username_box_edit-user" do
+        = icon('fas fa-edit',  class: "contents__btn--icon")
+      .sidebar__username_box_menu_newgroup
+       = link_to "#", class: "sidebar__username_box_newgroup" do
+        = icon('fas fa-cog',  class: "contents__btn--icon")
+  
+   .sidebar__list
+    .sidebar__list_box
+     .sidebar__list_boxname
+      テキストグループ１
+     .sidebar__list_lastmessage
+      最後のメッセージ
+    .sidebar__list_box
+     .sidebar__list_boxname
+      テキストグループ2
+     .sidebar__list_lastmessage
+      最後のメッセージ
+    .sidebar__list_box
+     .sidebar__list_boxname
+      テキストグループ3
+     .sidebar__list_lastmessage
+      最後のメッセージ
