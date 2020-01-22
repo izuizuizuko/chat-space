@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+ height: 100%;
+ width: 100%;
+ display: flex;
+}
+
+  .sidebar {
+    height: 100vh;
+    width: 300px;
+    color: #ffffff;
+    &__username {
+      background-color: #253141;
+      height: 100px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      // line-height: 100px;
+  
+      &_box {
+        background-color:#333333;
+        height: 20px;
+        width: 260px; 
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+
+        &_name {
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+       } 
+        &_menu { 
+          display: flex;
+          a {
+            color: #ffffff;
+          }
+
+          &_edit-user {  
+            margin: 5px;
+         } 
+          &_newgroup {
+            margin: 5px;
+         } 
+      } 
+    }   
+  }
+
+    &__list {
+      background-color: #2f3e51;
+      height: calc(100vh - 100px);
+      padding: 20px 20px 0;
+      overflow: scroll;
+
+      &_box{
+        margin-bottom: 40px;
+      }
+        &_name {
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+
+        &_lastmessage {
+          font-size: 11px;
+        }
+    }
+      
+}
+  .chat-main {
+    // width: calc(100vw - 300px);
+
+    &__info {
+      background-color: #ffffff;
+      height: 100px;
+    
+      &__box {
+        height: 100px;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        overflow: scroll; 
+
+        &__left {
+        margin-top: 35px;
+        
+          &__name {
+            font-size: 20px;
+            color: #333333;
+            margin-bottom: 15px;
+        }
+
+          &__member {
+            font-size: 12px;
+            color: #999999;
+            margin-top: 15px;
+            display: flex;
+
+            &__list {
+
+          }
+
+            &__name {
+
+          }
+          
+        }
+        
+      }
+        
+        &__edit {
+          color: #38aef0;
+          height: 40px;
+          line-height: 40px;
+          padding: 0 20px;
+          margin-top: 30px;
+          border: solid 1px #38aef0;
+          position: absolute;
+          right: 40px;   
+      }
+      }  
+  }     
+
+    &__list {
+      background-color: #fafafa;
+      height: calc(100vh - 190px);
+      width: calc(100vw - 300px);
+        
+      &__box {
+        padding: 40px;
+        
+        &__info {
+          display: flex;
+          margin-bottom: 10px;
+          
+
+          &__talker {
+            color: #333333;
+            font-size: 16px;  
+            font-weight: bold; 
+          }
+
+          &__date {
+            font-size: 12px;
+            color: #999999;
+            margin-left: 10px;
+          }     
+        }
+
+      &__text {
+        color: #434A54;
+        font-size: 14px;
+        margin-bottom: 10px;
+        text-align: left;
+        
+        }
+
+      }
+    }
+
+    &__message { 
+      background-color: #d2d2d2;
+      height: 90px;
+      width: calc(100vw - 300px);
+    
+      &__box { 
+        padding: 20px 40px;
+        height: 100%;
+        display: flex;
+        box-sizing: border-box;
+        position: relative;
+        
+        
+        &__tpform {
+          width: 100%;
+          position: relative;
+          display: flex;
+
+
+          &__text {
+            height: 50px;
+            width: 100%;
+            padding: 0 40px 0 10px;
+            color: #434a54;
+            position: absolute;border-style: none;
+            display: flex;
+            align-items: center;
+        
+          }
+          &__picture {
+            top: 10px;
+            right: 10px;
+            position: absolute;
+
+            &__file {
+              display: none;
+            }
+            
+          }
+        }
+
+        &__btn {
+          width: 100px;
+          height: 50px;
+          display: flex;
+          padding:0 30px;
+          background-color: #38aef0;
+          color: wheat; 
+          margin-left: 15px;  
+
+      }
+
+    }
+
+  }
+
+}
+
+
+
