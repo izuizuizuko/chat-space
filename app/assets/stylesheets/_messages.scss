@@ -20,7 +20,7 @@
       // line-height: 100px;
   
       &_box {
-        background-color:#333333;
+       
         height: 20px;
         width: 260px; 
         margin: auto;
@@ -54,21 +54,27 @@
       height: calc(100vh - 100px);
       padding: 20px 20px 0;
       overflow: scroll;
-
+      font-size: 11px;
+      a {
+        text-decoration: none;  
+        color: #ffffff;
+      }
       &_box{
         margin-bottom: 40px;
+        
       }
         &_name {
-          font-size: 15px;
+          font-size: 11px;
           margin-bottom: 5px;
         }
 
         &_lastmessage {
-          font-size: 11px;
+          font-size: 11px; 
         }
     }
       
 }
+
   .chat-main {
     // width: calc(100vw - 300px);
 
