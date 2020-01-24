@@ -103,12 +103,15 @@
             color: #999999;
             margin-top: 15px;
             display: flex;
+            // border-style: none;
+
 
             &__list {
 
           }
 
             &__name {
+              
 
           }
           
@@ -133,6 +136,7 @@
       background-color: #fafafa;
       height: calc(100vh - 190px);
       width: calc(100vw - 300px);
+      padding: 40px;
         
       &__box {
         padding: 40px;
@@ -190,7 +194,8 @@
             width: 100%;
             padding: 0 40px 0 10px;
             color: #434a54;
-            position: absolute;border-style: none;
+            position: absolute;
+            border-style: none;
             display: flex;
             align-items: center;
         
@@ -214,7 +219,7 @@
           padding:0 30px;
           background-color: #38aef0;
           color: wheat; 
-          margin-left: 15px;  
+          margin-left: 15px;
 
       }
 

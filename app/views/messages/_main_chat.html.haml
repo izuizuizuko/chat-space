@@ -1,54 +1,105 @@
+
 %l
- %body
-  .chat-main
-   .chat-main__info
-    .chat-main__info__box
-     .chat-main__info__box__left
-      .chat-main__info__box__left__name
-       テスト
-      .chat-main__info__box__left__member
-       .chat-main__info__box__left__member__list
-        member:
-       .chat-main__info__box__left__member__name
-        izumi
-     .chat-main__info__box__edit
-      Edit
+  %body
+    .chat-main
+      .chat-main__info
+        .chat-main__info__box
+          .chat-main__info__box__left
+            .chat-main__info__box__left__name
+              = @group.name
+            .chat-main__info__box__left__member
+              .chat-main__info__box__left__member__list
+                member:
+              .chat-main__info__box__left__member__name
+                - @group.users.each do |user|
+                  = user.name
+          .chat-main__info__box__edit
+            = link_to edit_group_path(@group) do
+              Edit
 
-   .chat-main__list
-    .chat-main__list__box
-     .chat-main__list__box__info
-      .chat-main__list__box__info__talker
-       izumi
-      .chat-main__list__box__info__date
-       2020/01/20(Mon) 21:51:50
-     .chat-main__list__box__text
-      aaaaaa
 
-    .chat-main__list__box
-     .chat-main__list__box__info
-      .chat-main__list__box__info__talker
-       tanaka
-      .chat-main__list__box__info__date
-       2020/01/01(Mon) 21:51:50
-     .chat-main__list__box__text
-      bbbbb
-    
-    .chat-main__list__box
-     .chat-main__list__box__info
-      .chat-main__list__box__info__talker
-       sato
-      .chat-main__list__box__info__date
-       2020/01/01(Mon) 21:51:50
-     .chat-main__list__box__text
-      ccccc
-   
+      .chat-main__list
+        = render @messages
+        -# .chat-main__list__box
+        -#   .chat-main__list__box__info
+        -#     .chat-main__list__box__info__talker
+              
+        -#     .chat-main__list__box__info__date
+              
+        -#   .chat-main__list__box__text
+        
+
+      .chat-main__message
+        = form_for [@group, @message],html: {class:"chat-main__message__box"} do |f|
+          .chat-main__message__box__tpform
+            = f.text_field :content, class: 'chat-main__message__box__tpform__text', placeholder: 'type a message'
+            = f.label :image, class: 'chat-main__message__box__tpform__picture' do
+              = icon('fas', 'image',)
+              = f.file_field :image, class: 'chat-main__message__box__tpform__picture__file'
+          = f.submit 'Send', class: 'chat-main__message__box__btn' 
+
+
+
+
+
+
+
+
   
-   
-   .chat-main__message
-    %form.chat-main__message__box
-     .chat-main__message__box__tpform
-      %input{type: "text", class: "chat-main__message__box__tpform__text", placeholder: "type a message"}
-      %label{class: "chat-main__message__box__tpform__picture"} 
-       = icon('fas', 'image')
-       %input{type: "file", class: "chat-main__message__box__tpform__picture__file"}
-     %input{type: "submit", class: "chat-main__message__box__btn", value: "send"} 
+
+
+
+
+
+
+
+
+  -#  .chat-main__message
+  -#    %form.chat-main__message__box
+  -#    .chat-main__message__box__tpform
+  -#      %input{type: "text", class: "chat-main__message__box__tpform__text", placeholder: "type a message"}
+  -#       %label{class: "chat-main__message__box__tpform__picture"} 
+  -#      = icon('fas', 'image')
+  -#      %input{type: "file", class: "chat-main__message__box__tpform__picture__file"}
+  -#    %input{type: "submit", class: "chat-main__message__box__btn", value: "send"} 
+
+  -#   .form
+  -#     = form_for [@group, @message] do |f|
+  -#       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+  -#       .form__mask
+  -#         = f.label :image, class: 'form__mask__image' do
+  -#           = icon('fas', 'image', class: 'icon')
+  -#           = f.file_field :image, class: 'hidden'
+  -#       = f.submit 'Send', class: 'form__submit'
+
+  -#  .chat-main__message
+  -#   =chat-main__message_for [@group, @message] do |f|
+  -#     = f.text_field :content, class: 'chat-main__message__message', placeholder: 'type a message'
+  -#     .chat-main__message__box__tpform
+  -#       = f.label :image, class: 'chat-main__message__box__tpform__image' do
+  -#         = icon('fas', 'image', class: 'icon')
+  -#           = f.file_field :image, class: 'hidden'
+  -#       = f.submit 'Send', class: 'chat-main__message__submit' 
+
+    
+
+
+
+
+
+-# .chat-main__message
+-#     %form.chat-main__message__box
+-#      .chat-main__message__box__tpform
+-#       %input{type: "text", class: "chat-main__message__box__tpform__text", placeholder: "type a message"}
+-#       %label{class: "chat-main__message__box__tpform__picture"} 
+-#        = icon('fas', 'image')
+-#        %input{type: "file", class: "chat-main__message__box__tpform__picture__file"}
+-#      %input{type: "submit", class: "chat-main__message__box__btn", value: "send"} 
+    -# .form
+    -#   = form_for [@group, @message] do |f|
+    -#     = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+    -#     .form__mask
+    -#       = f.label :image, class: 'form__mask__image' do
+    -#         = icon('fas', 'image', class: "chat-main__message__box__tpform__picture__file__icon')
+    -#         = f.file_field :image, class: "chat-main__message__box__tpform__picture__file__file"
+    -#     = f.submit 'Send', class: "chat-main__message__box__btn"
