@@ -2,16 +2,16 @@ $(function(){
     function buildHTML(message){
     if ( message.image ) {
       var html =
-        `<div class="message" data-message-id=${message.id}>
+        `<div class="message" chat-main__list__box__info__talker=${message.id}>
           <div class="upper-message">
-            <div class="upper-message__user-name">
+            <div class="chat-main__list__box__info__talker">
               ${message.user_name}
             </div>
-            <div class="upper-message__date">
+            <div class="chat-main__list__box__info__date">
               ${message.created_at}
             </div>
           </div>
-          <div class="lower-message">
+          <div class="hat-main__list__box__text">
             <p class="lower-message__content">
               ${message.content}
             </p>
@@ -23,14 +23,14 @@ $(function(){
       var html =
         `<div class="message" data-message-id=${message.id}>
           <div class="upper-message">
-            <div class="upper-message__user-name">
+            <div class="chat-main__list__box__info__talker">
               ${message.user_name}
             </div>
-            <div class="upper-message__date">
+            <div class="chat-main__list__box__info__date">
               ${message.created_at}
             </div>
           </div>
-          <div class="lower-message">
+          <div class="hat-main__list__box__text">
             <p class="lower-message__content">
               ${message.content}
             </p>
@@ -39,12 +39,12 @@ $(function(){
       return html;
     };
   }
-$('#new_message').submit(function(e){
+$('#new_message').submit(function(e) {
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
 
-
+ 
     $.ajax({
       url: url,
       type: "POST",
