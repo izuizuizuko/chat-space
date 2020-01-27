@@ -2,17 +2,17 @@ $(function(){
     function buildHTML(message){
     if ( message.image ) {
       var html =
-        `<div class="message" chat-main__list__box__info__talker=${message.id}>
-          <div class="upper-message">
-            <div class="chat-main__list__box__info__talker">
+        `<div class=.chat-main__list__box=${message.id}>
+          <div class=.chat-main__list__box__info>
+            <div class=.chat-main__list__box__info__talker>
               ${message.user_name}
             </div>
-            <div class="chat-main__list__box__info__date">
+            <div class=.chat-main__list__box__info__date>
               ${message.created_at}
             </div>
           </div>
-          <div class="hat-main__list__box__text">
-            <p class="lower-message__content">
+          <div class=chat-main__list__box__text>
+            <p class=lower-message__content>
               ${message.content}
             </p>
           </div>
@@ -21,7 +21,7 @@ $(function(){
       return html;
     } else {
       var html =
-        `<div class="message" data-message-id=${message.id}>
+        `<div class=.chat-main__list__box__info=${message.id}>
           <div class="upper-message">
             <div class="chat-main__list__box__info__talker">
               ${message.user_name}
