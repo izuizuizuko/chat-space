@@ -109,4 +109,3 @@ $(function(){
       setInterval(reloadMessages, 2000);
     }
 });
-
